@@ -17,5 +17,12 @@ namespace Atomlista.DataAccess
         public DbSet<Team> Teams { get; set; }
         public DbSet<TechOwner> TechOwners { get; set; }
         public DbSet<Person> People { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Person>()
+                .HasIndex(p => p.Username)
+                .IsUnique();
+        }
     }
 }
