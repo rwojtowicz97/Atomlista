@@ -24,8 +24,5 @@ namespace Atomlista.Models
         [Required]
         [MaxLength(50)]
         public string Email { get; protected set; }
-        [Required]
-        [Column(TypeName ="datetime")]
-        public DateTime CreatedAt { get; protected set; }
     }
 }

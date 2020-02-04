@@ -16,9 +16,6 @@ namespace Atomlista.Models
         [MaxLength(200)]
         public string CommentBody { get; protected set; }
         [Required]
-        [Column(TypeName ="datetime")]
-        public DateTime CreatedAt { get; protected set; }
-        [Required]
         public Product CommentedProduct { get; protected set; }
 
     }
