@@ -11,18 +11,18 @@ namespace Atomlista.Models
     public class Person
     { 
         [Key]
-        public int Id { get; protected set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(20)]
-        public string Username { get; protected set; }
+        public string Username { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; protected set; }
+        public string Name { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Surname { get; protected set; }
+        public string Surname { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Email { get; protected set; }
+        public string Email { get; set; }
     }
 }

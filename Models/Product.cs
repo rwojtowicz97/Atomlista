@@ -11,11 +11,11 @@ namespace Atomlista.Models
     public class Product
     {
         [Key]
-        public int Id { get; protected set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string ProductName { get; protected set; }
-        public List<Comment> Comments { get; protected set; } = new List<Comment>();
-        public List<Atom> Atoms { get; protected set; } = new List<Atom>();
+        public string ProductName { get; set; }
+        public List<Comment> Comments { get; set; } = new List<Comment>();
+        public List<Atom> Atoms { get; set; } = new List<Atom>();
     }
 }

@@ -11,10 +11,10 @@ namespace Atomlista.Models
     public class Team
     {
         [Key]
-        public int Id { get; protected set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string TeamName { get; protected set; }
-        public List<Person> People { get; protected set; } = new List<Person>();
+        public string TeamName { get; set; }
+        public List<Person> People { get; set; } = new List<Person>();
     }
 }

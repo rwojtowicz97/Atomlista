@@ -11,12 +11,12 @@ namespace Atomlista.Models
     public class Atom
     {
         [Key]
-        public int Id { get; protected set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(60)]
-        public string AtomName { get; protected set; }
+        public string AtomName { get; set; }
         [Required]
         [MaxLength(100)]
-        public string Url { get; protected set; }
+        public string Url { get; set; }
     }
 }

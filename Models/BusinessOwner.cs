@@ -11,10 +11,10 @@ namespace Atomlista.Models
     public class BusinessOwner
     {
         [Key]
-        public int Id { get; protected set; }
-        public List<Atom> Atoms { get; protected set; } = new List<Atom>();
-        public List<Product> Products { get; protected set; } = new List<Product>();
+        public int Id { get; set; }
+        public List<Atom> Atoms { get; set; } = new List<Atom>();
+        public List<Product> Products { get; set; } = new List<Product>();
         [Required]
-        public Person Person { get; protected set; }
+        public Person Person { get; set; }
     }
 }

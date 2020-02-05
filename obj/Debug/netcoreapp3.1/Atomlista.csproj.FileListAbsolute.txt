@@ -310,3 +310,7 @@ C:\Users\rwojtowicz\source\repos\Atomlista\obj\Debug\netcoreapp3.1\Atomlista.Raz
 C:\Users\rwojtowicz\source\repos\Atomlista\obj\Debug\netcoreapp3.1\Atomlista.csproj.CopyComplete
 C:\Users\rwojtowicz\source\repos\Atomlista\obj\Debug\netcoreapp3.1\Atomlista.dll
 C:\Users\rwojtowicz\source\repos\Atomlista\obj\Debug\netcoreapp3.1\Atomlista.pdb
+E:\Projekty\Atomlista\Atomlista\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\Projekty\Atomlista\Atomlista\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Projekty\Atomlista\Atomlista\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\Projekty\Atomlista\Atomlista\obj\Debug\netcoreapp3.1\Atomlista.MvcApplicationPartsAssemblyInfo.cache

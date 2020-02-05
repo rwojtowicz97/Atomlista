@@ -11,12 +11,12 @@ namespace Atomlista.Models
     public class Comment
     {
         [Key]
-        public int Id { get; protected set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(200)]
-        public string CommentBody { get; protected set; }
+        public string CommentBody { get; set; }
         [Required]
-        public Product CommentedProduct { get; protected set; }
+        public Product CommentedProduct { get; set; }
 
     }
 }
