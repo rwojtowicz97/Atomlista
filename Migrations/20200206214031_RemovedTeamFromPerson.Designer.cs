@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Atomlista.Migrations
 {
     [DbContext(typeof(AtomlistContext))]
-    [Migration("20200206150043_AddedTeamFieldToPerson")]
-    partial class AddedTeamFieldToPerson
+    [Migration("20200206214031_RemovedTeamFromPerson")]
+    partial class RemovedTeamFromPerson
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -171,6 +171,9 @@ namespace Atomlista.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("PeopleCount")
+                        .HasColumnType("int");
+
                     b.Property<string>("TeamName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -233,7 +236,7 @@ namespace Atomlista.Migrations
 
             modelBuilder.Entity("Atomlista.Models.Person", b =>
                 {
-                    b.HasOne("Atomlista.Models.Team", "Team")
+                    b.HasOne("Atomlista.Models.Team", null)
                         .WithMany("People")
                         .HasForeignKey("TeamId");
                 });

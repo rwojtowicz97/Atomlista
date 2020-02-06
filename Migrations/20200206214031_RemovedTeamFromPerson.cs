@@ -2,7 +2,7 @@
 
 namespace Atomlista.Migrations
 {
-    public partial class AddedTeamFieldToPerson : Migration
+    public partial class RemovedTeamFromPerson : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

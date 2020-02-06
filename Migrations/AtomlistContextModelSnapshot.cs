@@ -234,7 +234,7 @@ namespace Atomlista.Migrations
 
             modelBuilder.Entity("Atomlista.Models.Person", b =>
                 {
-                    b.HasOne("Atomlista.Models.Team", "Team")
+                    b.HasOne("Atomlista.Models.Team", null)
                         .WithMany("People")
                         .HasForeignKey("TeamId");
                 });
