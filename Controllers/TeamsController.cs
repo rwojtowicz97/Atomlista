@@ -43,6 +43,13 @@ namespace Atomlista.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Team>> GetTeam(int id)
         {
+            var query = _context.Teams
+                .Select(b =>
+                new
+                {
+                    Team = b,
+                    Members = b.People.Count()
+                });
             var team = await _context.Teams.FindAsync(id);
 
             if (team == null)
