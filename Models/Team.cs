@@ -16,5 +16,6 @@ namespace Atomlista.Models
         [MaxLength(50)]
         public string TeamName { get; set; }
         public List<Person> People { get; set; } = new List<Person>();
+        public int PeopleCount { get; set; }
     }
 }

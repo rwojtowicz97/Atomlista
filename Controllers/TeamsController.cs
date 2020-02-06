@@ -25,7 +25,18 @@ namespace Atomlista.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Team>>> GetTeams()
         {
-            return await _context.Teams.ToListAsync();
+            var teams = await _context.Teams.ToListAsync();
+            foreach (var team in teams)
+            {
+                var teamDetails = _context.Entry(team)
+                .Collection(m => m.People)
+                .Query()
+                .ToList();
+                team.People = teamDetails;
+                team.PeopleCount = teamDetails.Count();
+            }
+
+            return teams;
         }
 
         // GET: api/Teams/5
@@ -39,6 +50,10 @@ namespace Atomlista.Controllers
                 return NotFound();
             }
 
+            var teamDetails = _context.Entry(team)
+                .Collection(m => m.People)
+                .Query().Count();
+            team.PeopleCount = teamDetails;
             return team;
         }
 
