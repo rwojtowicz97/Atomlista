@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projekty\\Atomlista\\Atomlista\\Atomlista.csproj": {}
+    "C:\\Users\\rwojtowicz\\source\\repos\\Atomlista\\Atomlista.csproj": {}
   },
   "projects": {
-    "E:\\Projekty\\Atomlista\\Atomlista\\Atomlista.csproj": {
+    "C:\\Users\\rwojtowicz\\source\\repos\\Atomlista\\Atomlista.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projekty\\Atomlista\\Atomlista\\Atomlista.csproj",
+        "projectUniqueName": "C:\\Users\\rwojtowicz\\source\\repos\\Atomlista\\Atomlista.csproj",
         "projectName": "Atomlista",
-        "projectPath": "E:\\Projekty\\Atomlista\\Atomlista\\Atomlista.csproj",
-        "packagesPath": "C:\\Users\\Robert\\.nuget\\packages\\",
-        "outputPath": "E:\\Projekty\\Atomlista\\Atomlista\\obj\\",
+        "projectPath": "C:\\Users\\rwojtowicz\\source\\repos\\Atomlista\\Atomlista.csproj",
+        "packagesPath": "C:\\Users\\rwojtowicz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rwojtowicz\\source\\repos\\Atomlista\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Robert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rwojtowicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

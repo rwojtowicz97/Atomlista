@@ -24,5 +24,6 @@ namespace Atomlista.Models
         [Required]
         [MaxLength(50)]
         public string Email { get; set; }
+        public Team Team { get; set; }
     }
 }
