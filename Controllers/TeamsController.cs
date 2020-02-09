@@ -35,6 +35,7 @@ namespace Atomlista.Controllers
                 team.People = teamDetails;
                 team.PeopleCount = teamDetails.Count();
             }
+            await _context.SaveChangesAsync();
 
             return teams;
         }
@@ -54,6 +55,8 @@ namespace Atomlista.Controllers
                 .Collection(m => m.People)
                 .Query().Count();
             team.PeopleCount = teamDetails;
+            await _context.SaveChangesAsync();
+
             return team;
         }
 
