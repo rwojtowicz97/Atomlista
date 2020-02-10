@@ -17,5 +17,7 @@ namespace Atomlista.Models
         public string ProductName { get; set; }
         public List<Comment> Comments { get; set; } = new List<Comment>();
         public List<Atom> Atoms { get; set; } = new List<Atom>();
+        public Person BussinessOwner { get; set; }
+        public Person TechOwner { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace Atomlista.Migrations
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
-                    b.Property<int?>("BusinessOwnerId")
+                    b.Property<int?>("BussinessOwnerId")
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductId")
@@ -47,30 +47,13 @@ namespace Atomlista.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BusinessOwnerId");
+                    b.HasIndex("BussinessOwnerId");
 
                     b.HasIndex("ProductId");
 
                     b.HasIndex("TechOwnerId");
 
                     b.ToTable("Atoms");
-                });
-
-            modelBuilder.Entity("Atomlista.Models.BusinessOwner", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("BusinessOwners");
                 });
 
             modelBuilder.Entity("Atomlista.Models.Comment", b =>
@@ -142,7 +125,7 @@ namespace Atomlista.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BusinessOwnerId")
+                    b.Property<int?>("BussinessOwnerId")
                         .HasColumnType("int");
 
                     b.Property<string>("ProductName")
@@ -155,7 +138,7 @@ namespace Atomlista.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BusinessOwnerId");
+                    b.HasIndex("BussinessOwnerId");
 
                     b.HasIndex("TechOwnerId");
 
@@ -182,45 +165,19 @@ namespace Atomlista.Migrations
                     b.ToTable("Teams");
                 });
 
-            modelBuilder.Entity("Atomlista.Models.TechOwner", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("TechOwners");
-                });
-
             modelBuilder.Entity("Atomlista.Models.Atom", b =>
                 {
-                    b.HasOne("Atomlista.Models.BusinessOwner", null)
-                        .WithMany("Atoms")
-                        .HasForeignKey("BusinessOwnerId");
+                    b.HasOne("Atomlista.Models.Person", "BussinessOwner")
+                        .WithMany()
+                        .HasForeignKey("BussinessOwnerId");
 
                     b.HasOne("Atomlista.Models.Product", null)
                         .WithMany("Atoms")
                         .HasForeignKey("ProductId");
 
-                    b.HasOne("Atomlista.Models.TechOwner", null)
-                        .WithMany("Atoms")
-                        .HasForeignKey("TechOwnerId");
-                });
-
-            modelBuilder.Entity("Atomlista.Models.BusinessOwner", b =>
-                {
-                    b.HasOne("Atomlista.Models.Person", "Person")
+                    b.HasOne("Atomlista.Models.Person", "TechOwner")
                         .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TechOwnerId");
                 });
 
             modelBuilder.Entity("Atomlista.Models.Comment", b =>
@@ -241,22 +198,13 @@ namespace Atomlista.Migrations
 
             modelBuilder.Entity("Atomlista.Models.Product", b =>
                 {
-                    b.HasOne("Atomlista.Models.BusinessOwner", null)
-                        .WithMany("Products")
-                        .HasForeignKey("BusinessOwnerId");
-
-                    b.HasOne("Atomlista.Models.TechOwner", null)
-                        .WithMany("Products")
-                        .HasForeignKey("TechOwnerId");
-                });
-
-            modelBuilder.Entity("Atomlista.Models.TechOwner", b =>
-                {
-                    b.HasOne("Atomlista.Models.Person", "Person")
+                    b.HasOne("Atomlista.Models.Person", "BussinessOwner")
                         .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BussinessOwnerId");
+
+                    b.HasOne("Atomlista.Models.Person", "TechOwner")
+                        .WithMany()
+                        .HasForeignKey("TechOwnerId");
                 });
 #pragma warning restore 612, 618
         }

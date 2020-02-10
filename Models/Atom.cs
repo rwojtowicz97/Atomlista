@@ -18,5 +18,7 @@ namespace Atomlista.Models
         [Required]
         [MaxLength(100)]
         public string Url { get; set; }
+        public  Person BussinessOwner { get; set; }
+        public Person TechOwner { get; set; }
     }
 }
